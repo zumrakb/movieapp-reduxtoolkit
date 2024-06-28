@@ -1,8 +1,15 @@
 import React from "react";
 
-const MovieSwiper = ({ title, releaseYear, overview, backdropImage }) => {
+const MovieSwiper = ({
+  title,
+  releaseYear,
+  overview,
+  backdropImage,
+  clickToPlay,
+  movieId,
+}) => {
   return (
-    <div className="relative bg-black bg-opacity-55 h-[500px] flex items-center">
+    <div className="bg-black bg-opacity-55 h-[500px] flex items-center">
       <img
         className="absolute w-full h-full object-cover -z-[30]"
         src={`https://image.tmdb.org/t/p/original${backdropImage}`}
@@ -20,6 +27,7 @@ const MovieSwiper = ({ title, releaseYear, overview, backdropImage }) => {
           <button
             className="border rounded border-red-700 bg-red-700 p-3 hover:bg-red-800 
           hover:scale-110 transition-transform "
+            onClick={() => clickToPlay(movieId)}
           >
             PLAY NOW
           </button>

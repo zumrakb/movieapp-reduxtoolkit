@@ -26,6 +26,7 @@ const Home = () => {
         <div className="grid grid-cols-3 xl:grid-cols-3 m-12 gap-y-20 h-fit ">
           {movies.map((movie) => (
             <MovieCard
+              movieID={movie.id}
               key={movie.id}
               release={movie.release_date}
               title={movie.title}
